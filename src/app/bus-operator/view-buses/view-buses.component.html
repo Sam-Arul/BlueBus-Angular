@@ -1,0 +1,15 @@
+<app-bus-navbar [userName]='busOperatorName'></app-bus-navbar>
+<div class="row bg-dark h-100">
+    <span  *ngFor="let bus of busCollections">
+        <div [ngClass]="{'bg-warning':bus.status=='pending','bg-success':bus.status=='approved'}" class="card text-light m-4">
+            <div class="card-header">{{bus.name}}</div>
+            <div class="card-body text-primary">
+                <h5 class="card-title">{{bus.source}} -> {{bus.destination}}</h5>
+                <p class="card-text">{{bus.busType}}</p>
+                <p class="card-text">{{bus.status}}</p>
+                <p class="card-text">Available Tickets - {{bus.availableTickets}}</p>
+            </div>
+        </div>
+    </span>
+
+</div>

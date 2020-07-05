@@ -1,0 +1,31 @@
+<app-admin-navbar></app-admin-navbar>
+<div *ngIf="hasBusApproved" class="card text-center bg-success">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Approved Successfully!!</h5>
+    </div>
+</div>
+<div *ngIf="hasBusRejected" class="card text-center bg-danger">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Rejected Successfully!!</h5>
+    </div>
+</div>
+<div class="row bg-dark h-100">
+    <span  *ngFor="let bus of busList">
+        <div *ngIf="bus.status=='pending'" class="card  m-4">
+            <div class="card-header"><h1>{{bus.name}}</h1></div>
+            <div class="card-body text-primary">
+                
+                <h5 class="card-title">{{bus.source}} -> {{bus.destination}}</h5>
+                <p class="card-text">{{bus.regNo}}</p>
+                <p class="card-text">{{bus.busType}}</p>
+                <p class="card-text">{{bus.status}}</p>
+                <p class="card-text">Available Tickets - {{bus.availableTickets}}</p>
+                <div class="row d-flex justify-content-between">
+                    <input type="button" value="Approve" class="btn btn-success" (click)="approveBus(bus.regNo)">
+                    <input type="button" value="Reject" class="btn btn-danger" (click)="rejectBus(bus.regNo)">
+                </div>
+            </div>
+        </div>
+    </span>
+
+</div>

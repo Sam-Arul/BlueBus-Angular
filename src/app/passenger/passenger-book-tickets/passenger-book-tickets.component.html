@@ -1,0 +1,52 @@
+<app-passenger-navbar [userName]='userName' [userEmail]="passengerEmail"></app-passenger-navbar>
+<div *ngIf="hasBookedTickets" class="card text-center bg-success">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Ticket Booked Successfully!!</h5>
+    </div>
+</div>
+<div class="row justify-content-between">
+    <div class="ml-4">
+        <h2 class="align-text-center">{{busDetails.name}}</h2>
+        <div class="row justify-content-between">
+            <h2>{{busDetails.Source}}</h2>
+            <h2>{{busDetails.destination}}</h2>
+        </div>
+        <div class="row">
+            <h2>Price:&#8377; {{busDetails.price}}</h2>
+        </div>
+        <div class="row">
+            <h2>Date & Time: {{busDetails.date}} {{busDetails.time}}</h2>
+        </div>
+        <div class="row">
+            <h2>Driver Name: {{busDetails.driverName}}</h2>
+        </div>
+        <div class="row">
+            <h2>Driver Phone Number: {{busDetails.driverNo}}</h2>
+        </div>
+    </div>
+    <div class="row mr-4 w-50">
+        <div *ngFor="let seat of seatList; let i = index" class="col-lg-3">
+            <!-- <img *ngIf="seat.status=='available'" src="/assets/icons8-theatre-seat-80 (1).png" alt="">
+            <button (click)="change()" *ngIf="seat.status!='available'">
+                <img  src="/assets/icons8-theatre-seat-80 (2).png" >
+            </button>
+                
+            <h4>{{seat.seatNo}}</h4> -->
+
+            <button (click)="change(i+1)" *ngIf="seat.status=='available'">
+                <img src="/assets/blue.png" alt="" id="{{'image'+(i+1)}}">
+                <p>{{seat.seatNo}}</p>
+
+            </button>
+            <button *ngIf="seat.status!='available'" disabled>
+                <img src="/assets/red.png" alt="">
+                <p>{{seat.seatNo}}</p>
+            </button>
+        </div> 
+        
+    </div>
+
+</div>
+<div class="row justify-content-center m-4 ">
+    <input type="button" class="btn btn-primary" value="Book" (click)='book()'> 
+</div>

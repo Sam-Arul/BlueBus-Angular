@@ -1,0 +1,119 @@
+<app-bus-navbar [userName]="busOperatorName"> </app-bus-navbar>
+<div *ngIf="isBusAddedSuccessfully" class="card text-center bg-success">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Added Successfully!!</h5>
+    </div>
+</div>
+<div class="row d-flex justify-content-center bg-dark text-light h-100">
+    <form [formGroup]="addBusForm">
+        <div class="row mt-4">
+            <div class="col-lg-6">
+                <h2>Bus Name</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" formControlName="name" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Source</h2>
+            </div>
+            <div class="col-lg-6">
+                <select class="form-control" formControlName='source' id="">
+                    <option class="form-control" value="" disabled selected>Choose Source</option>
+                    <option class="form-control" value="chennai">Chennai</option>
+                    <option class="form-control" value="madurai">Madurai</option>
+                    <option class="form-control" value="salem">Salem</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Destination</h2>
+            </div>
+            <div class="col-lg-6">
+                <select class="form-control" formControlName='destination' id="">
+                    <option class="form-control" value="" disabled selected>Choose Destination</option>
+                    <option class="form-control" value="chennai">Chennai</option>
+                    <option class="form-control" value="madurai">Madurai</option>
+                    <option class="form-control" value="salem">Salem</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Date</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="date" formControlName="date" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Time</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="time" formControlName="time" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Total Tickets</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" formControlName="totalTickets" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Price</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" formControlName="price" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Bus Type</h2>
+            </div>
+            <div class="col-lg-6">
+                <select class="form-control" formControlName='busType' id="">
+                    <option class="form-control" value="" disabled selected>Choose Bus Type</option>
+                    <option class="form-control" value="Non A/c Seater">Non A/c Seater</option>
+                    <option class="form-control" value="Non A/c Sleeper">Non A/c Sleeper</option>
+                    <option class="form-control" value="A/c Seater">A/c Seater</option>
+                    <option class="form-control" value="A/c Sleeper">A/c Sleeper</option>
+                </select>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Reg No</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" formControlName="regNo" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Driver No</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="number" formControlName="driverNo" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-6">
+                <h2>Driver Name</h2>
+            </div>
+            <div class="col-lg-6">
+                <input type="text" formControlName="driverName" class="form-control">
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-lg-12">
+                <input type="submit" class="btn btn-primary form-control" (click)="addBus()">
+            </div>
+        </div>
+    </form>
+</div>

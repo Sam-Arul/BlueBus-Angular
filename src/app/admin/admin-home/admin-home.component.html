@@ -1,0 +1,27 @@
+<app-admin-navbar></app-admin-navbar>
+<div *ngIf="hasOperatorApproved" class="card text-center bg-success">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Operator Approved Successfully!!</h5>
+    </div>
+</div>
+<div *ngIf="hasOperatorRejected" class="card text-center bg-danger">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Operator Rejected Successfully!!</h5>
+    </div>
+</div>
+<div class="row bg-dark h-100">
+    <span  *ngFor="let operator of operatorList">
+        <div class="card text-light m-4">
+            <div class="card-header">{{operator.name}}</div>
+            <div class="card-body text-primary">
+                <h5 class="card-title">{{operator.email}}</h5>
+                <p class="card-text">{{operator.phone}}</p>
+                <div class="row d-flex justify-content-between">
+                    <input type="button" value="Approve" class="btn btn-success" (click)="approveOperator(operator.email)">
+                    <input type="button" value="Reject" class="btn btn-danger" (click)="rejectOperator(operator.email,operator.name)">
+                </div>
+            </div>
+        </div>
+    </span>
+
+</div>

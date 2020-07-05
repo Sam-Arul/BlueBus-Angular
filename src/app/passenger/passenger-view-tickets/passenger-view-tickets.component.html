@@ -1,0 +1,27 @@
+<app-passenger-navbar [userName]="userName" [userEmail]="userEmail"></app-passenger-navbar>
+<div *ngIf="hasTicketCancelled" class="card text-center bg-danger">
+    <div class="card-body">
+        <h5 class="card-title text-white">Bus Ticket Cancelled Successfully!!</h5>
+    </div>
+</div>
+<div class="row bg-dark">
+    <span  *ngFor="let ticket of ticketList">
+        <div  class="card m-4">
+            <div class="card-header">{{ticket.name}}</div>
+            <div class="card-body text-primary">
+                <h5 class="card-title">{{ticket.source}} -> {{ticket.destination}}</h5>
+                <p class="card-text">{{ticket.busType}}</p>
+                <p class="card-text">{{ticket.status}}</p>
+                <p class="card-text">{{ticket.price}}</p>
+                <p class="card-text">{{ticket.date}}</p>
+                <p class="card-text">{{ticket.time}}</p>
+                <p class="card-text">{{ticket.noOfTickets}}</p>
+                <p class="card-text">{{ticket.seatNo}}</p>
+                <div *ngIf="ticket.status=='upcoming'" class="justify-content-center">
+                    <input type="button" class="btn btn-danger" value="Cancel Ticket" (click)="cancelTicket(ticket.ticketId,ticket.seatNo,ticket.regNo)" >
+                </div>
+            </div>
+        </div>
+    </span>
+
+</div>

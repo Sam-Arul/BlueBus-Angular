@@ -1,0 +1,35 @@
+<app-passenger-navbar [userName]='passengerDetails.name' [userEmail]= 'userEmail'></app-passenger-navbar>
+<div *ngIf="hasEdit" class="card text-center bg-success">
+    <div class="card-body">
+        <h5 class="card-title text-white">Profile Edited Successfully!</h5>
+    </div>
+</div>
+
+  <div class="row">
+    <div class="container w-25 ">
+      <h2>Passenger Edit Profile</h2>
+        <form [formGroup]='editForm'>
+            <div class="row">
+                <h3>Name</h3>
+            </div>
+            <div class="row">
+                <input type="text" formControlName='name' class="form-control">
+            </div>
+          <div class="row">
+              <h3>Email</h3>
+          </div>
+          <div class="row">
+              <input type="email" formControlName='email' class="form-control">
+          </div>
+          <div class="row">
+            <h3>Phone</h3>
+        </div>
+        <div class="row">
+            <input type="number" formControlName='phone' class="form-control">
+        </div>
+          <div class="row mt-4">
+              <input type="submit" class="btn btn-primary form-control" value="Update" (click)="editPassengerDetails()">
+          </div>
+        </form>
+    </div>
+</div>

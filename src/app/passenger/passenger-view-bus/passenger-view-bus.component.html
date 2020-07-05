@@ -1,0 +1,23 @@
+<app-passenger-navbar [userName]  = 'userName'></app-passenger-navbar>
+<div *ngIf="noBus" class="card text-center bg-danger">
+    <div class="card-body">
+        <h5 class="card-title text-white">No Bus Found</h5>
+    </div>
+</div>
+<div class="row bg-dark">
+    <span  *ngFor="let bus of busList">
+        <div class="card m-4">
+            <div class="card-header">{{bus.name}}</div>
+            <div class="card-body text-primary">
+                <h5 class="card-title">{{bus.source}} -> {{bus.destination}}</h5>
+                <p class="card-text">{{bus.busType}}</p>
+                <p class="card-text">Rs. {{bus.price}}</p>
+                <p class="card-text">Available Tickets - {{bus.availableTickets}}</p>
+                <div class="row d-flex justify-content-center">
+                    <input type="button" value="Book" class="btn btn-success" (click)="bookTickets(bus.regNo)">
+                </div>
+            </div>
+        </div>
+    </span>
+
+</div>

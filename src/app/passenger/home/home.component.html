@@ -1,0 +1,43 @@
+<app-passenger-navbar [userName]="passengerUserName.name" [userEmail]="passengerEmail"></app-passenger-navbar>
+<div class="row">
+    <div class="container w-25 ">
+        <h2>Book Tickets</h2>
+        <form [formGroup]='bookTicketsForm'>
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2>Source</h2>
+                </div>
+                <div class="col-lg-6">
+                    <h2>Destination</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6">
+                    <select class="form-control" formControlName='source' id="">
+                        <option class="form-control" value="" disabled selected>Choose Source</option>
+                        <option class="form-control" value="chennai">Chennai</option>
+                        <option class="form-control" value="madurai">Madurai</option>
+                        <option class="form-control" value="salem">Salem</option>
+                    </select>
+                </div>
+                <div class="col-lg-6">
+                    <select class="form-control" formControlName='destination' id="">
+                        <option class="form-control" value="" disabled selected>Choose Destination</option>
+                        <option class="form-control" value="chennai">Chennai</option>
+                        <option class="form-control" value="madurai">Madurai</option>
+                        <option class="form-control" value="salem">Salem</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mt-4">
+                    <input class="form-control" type="date" formControlName='date'>
+                </div>
+                <div class="col-lg-6 mt-4">
+                    <input type="submit" value="Submit" class="form-control btn btn-success" (click)="searchBus()">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
