@@ -11,40 +11,40 @@ passengerDetails;
     
    }
    getUserName(email){
-     return this.http.get('http://localhost:3000/passenger/getusername/'+ email);
+     return this.http.get('https://sam-blue-bus.herokuapp.com/passenger/getusername/'+ email);
    }
    passengerSignup(data):Observable<any>{
-     return this.http.post('http://localhost:3000/signup/passenger',data);
+     return this.http.post('https://sam-blue-bus.herokuapp.com/signup/passenger',data);
    }
    passengerLogin(data):Observable<any>{
-     return this.http.post('http://localhost:3000/login/passenger',data);
+     return this.http.post('https://sam-blue-bus.herokuapp.com/login/passenger',data);
    }
    searchBus(source,destination,date):Observable<any>{
      console.log(source,destination,date);
-     return this.http.get('http://localhost:3000/passenger/getbusdetails/' + source + '/' + destination + '/' + date);
+     return this.http.get('https://sam-blue-bus.herokuapp.com/passenger/getbusdetails/' + source + '/' + destination + '/' + date);
    }
    viewProfile(email):Observable<any>{
-     return this.http.get('http://localhost:3000/passenger/viewprofile/' + email);
+     return this.http.get('https://sam-blue-bus.herokuapp.com/passenger/viewprofile/' + email);
    }
    editProfile(data,email):Observable<any>{
-     return this.http.put('http://localhost:3000/passenger/editprofile/'+ email,data);
+     return this.http.put('https://sam-blue-bus.herokuapp.com/passenger/editprofile/'+ email,data);
    }
    viewTickets(email):Observable<any>{
-     return this.http.get('http://localhost:3000/passenger/viewtickets/' + email);
+     return this.http.get('https://sam-blue-bus.herokuapp.com/passenger/viewtickets/' + email);
    }
    bookTicket(data,email):Observable<any>{
-     return this.http.put('http://localhost:3000/passenger/bookseats/' +email,data);
+     return this.http.put('https://sam-blue-bus.herokuapp.com/passenger/bookseats/' +email,data);
    }
    changeBusTicket(data,regNo):Observable<any>{
-    return this.http.put('http://localhost:3000/bus/bookseats/' + regNo,data);
+    return this.http.put('https://sam-blue-bus.herokuapp.com/bus/bookseats/' + regNo,data);
   }
    cancelTicket(data,email,id):Observable<any>{
-     return this.http.put('http://localhost:3000/passenger/cancelseats/' + email + '/' + id,data);
+     return this.http.put('https://sam-blue-bus.herokuapp.com/passenger/cancelseats/' + email + '/' + id,data);
    }
    cancelBusTicket(data,regNo):Observable<any>{
-    return this.http.put('http://localhost:3000/bus/cancelseats/' + regNo,data);
+    return this.http.put('https://sam-blue-bus.herokuapp.com/bus/cancelseats/' + regNo,data);
   }
    getBusDetails(regNo):Observable<any>{
-     return this.http.get('http://localhost:3000/passenger/getbusdetails/' + regNo);
+     return this.http.get('https://sam-blue-bus.herokuapp.com/passenger/getbusdetails/' + regNo);
    }
 }

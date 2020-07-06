@@ -10,25 +10,25 @@ export class AdminService {
 
   constructor(private http: HttpClient) { }
   adminLogin(data):Observable<any>{
-    return this.http.post('http://localhost:3000/admin/login',data);
+    return this.http.post('https://sam-blue-bus.herokuapp.com/admin/login',data);
   }
   listPendingOperator():Observable<any>{
-    return this.http.get('http://localhost:3000/admin/approvaloperator');
+    return this.http.get('https://sam-blue-bus.herokuapp.com/admin/approvaloperator');
   }
   actionPendingOperator(data,email,action):Observable<any>{
-    return this.http.put('http://localhost:3000/admin/approvaloperator/' + email + '/' + action,data);
+    return this.http.put('https://sam-blue-bus.herokuapp.com/admin/approvaloperator/' + email + '/' + action,data);
   }
   listPendingBuses():Observable<any>{
-    return this.http.get('http://localhost:3000/admin/approvalbus');
+    return this.http.get('https://sam-blue-bus.herokuapp.com/admin/approvalbus');
   }
   actionPendingBuses(data,regNo,action):Observable<any>{
     console.log(regNo,action)
-    return this.http.put('http://localhost:3000/admin/approvalbus/' + regNo + '/' + action,data);
+    return this.http.put('https://sam-blue-bus.herokuapp.com/admin/approvalbus/' + regNo + '/' + action,data);
   }
   deleteRejectedOperator(email,name):Observable<any>{
-    return this.http.delete('http://localhost:3000/admin/deleteoperator/' + email + '/' + name);
+    return this.http.delete('https://sam-blue-bus.herokuapp.com/admin/deleteoperator/' + email + '/' + name);
   }
   deleteRejectedBus(regNo):Observable<any>{
-    return this.http.delete('http://localhost:3000/admin/deletebus/' + regNo);
+    return this.http.delete('https://sam-blue-bus.herokuapp.com/admin/deletebus/' + regNo);
   }
 }
