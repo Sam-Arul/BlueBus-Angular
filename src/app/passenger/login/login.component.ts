@@ -21,14 +21,19 @@ passengerLoginForm;
   }
 sendPassengerDetails(){
   if(this.passengerLoginForm.valid){
-    alert('success');
     this.passengerService.passengerLogin(this.passengerLoginForm.value).subscribe((data)=>{
       console.log(data);
       if(data.message!='login failed'){
         this.router.navigate(['/passenger/home/'+ this.passengerLoginForm.value.email])
       }
+      else{
+        alert("Email or Password is Incorrect")
+      }
     })
     
+  }
+  else{
+    alert("Enter your Credentials");
   }
 }
 }

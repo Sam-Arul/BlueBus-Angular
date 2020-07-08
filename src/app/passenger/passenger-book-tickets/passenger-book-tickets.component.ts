@@ -49,7 +49,6 @@ this.hasBookedTickets = false;
    
 change(seat){
   
-  alert("seat selected");
   if(this.isSelected[parseInt(seat)-1]==false){
     (document.getElementById("image"+seat) as HTMLImageElement).src = this.path2;
     this.isSelected[seat-1] = true;

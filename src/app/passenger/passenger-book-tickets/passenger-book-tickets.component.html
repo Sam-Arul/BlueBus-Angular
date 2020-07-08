@@ -26,12 +26,6 @@
     </div>
     <div class="row mr-4 w-50">
         <div *ngFor="let seat of seatList; let i = index" class="col-lg-3">
-            <!-- <img *ngIf="seat.status=='available'" src="/assets/icons8-theatre-seat-80 (1).png" alt="">
-            <button (click)="change()" *ngIf="seat.status!='available'">
-                <img  src="/assets/icons8-theatre-seat-80 (2).png" >
-            </button>
-                
-            <h4>{{seat.seatNo}}</h4> -->
 
             <button (click)="change(i+1)" *ngIf="seat.status=='available'">
                 <img src="/assets/blue.png" alt="" id="{{'image'+(i+1)}}">
