@@ -37,24 +37,31 @@
             </div>
             <div class="row">
                 <input type="text" formControlName='name' class="form-control">
+                <em *ngIf="busOperatorSignUpForm.controls.name.invalid && busOperatorSignUpForm.controls.name.touched">Name Required</em>
             </div>
           <div class="row">
               <h3>Email</h3>
           </div>
           <div class="row">
               <input type="email" formControlName='email' class="form-control">
+              <em *ngIf="busOperatorSignUpForm.controls.email.invalid && busOperatorSignUpForm.controls.email.touched">Email Invalid</em>
+
           </div>
           <div class="row">
               <h3>Password</h3>
           </div>
           <div class="row">
               <input type="password" formControlName='password' class="form-control">
+              <em *ngIf="busOperatorSignUpForm.controls.password.invalid && busOperatorSignUpForm.controls.password.touched">Password Required</em>
+
           </div>
           <div class="row">
             <h3>Phone</h3>
         </div>
         <div class="row">
             <input type="number" formControlName='phone' class="form-control">
+            <em *ngIf="busOperatorSignUpForm.controls.phone.invalid && busOperatorSignUpForm.controls.phone.touched">Phone Required</em>
+
         </div>
           <div class="row mt-4">
               <input type="submit" class="btn btn-primary form-control" value="SignUp" (click)="sendbusOperatorSignUpDetails()">

@@ -14,6 +14,15 @@ busOperatorName;
 busOperatorEmail;
 addBusForm;
 isBusAddedSuccessfully;
+selectedSource:any
+selectedDestination:any
+source = ['Chennai','Madurai','Salem'];
+destination = ['Chennai','Madurai','Salem'];
+index;
+dd;
+mm;
+yyyy;
+today;
   constructor(private busoperatorService:BusOperatorService,private route:ActivatedRoute) {
     this.busOperatorEmail = this.route.snapshot.params.email;
     console.log(this.busOperatorEmail)
@@ -22,6 +31,19 @@ isBusAddedSuccessfully;
       console.log(data);
       this.busOperatorName = data.name;
       console.log(this.busOperatorName);
+      var today = new Date();
+ this.dd = today.getDate();
+ this.mm = today.getMonth()+1; //January is 0!
+ this.yyyy = today.getFullYear();
+ if(this.dd<10){
+        this.dd='0'+this.dd
+    } 
+    if(this.mm<10){
+        this.mm='0'+this.mm
+    } 
+
+this.today = this.yyyy+'-'+this.mm+'-'+this.dd;
+document.getElementById("datefield").setAttribute("min", this.today);
     }) 
     
     this.addBusForm = new FormGroup({
@@ -51,5 +73,12 @@ addBus(){
       }
     })
   }
+}
+
+test(){
+  this.destination = ['Chennai','Madurai','Salem'];
+  this.index = this.destination.indexOf(this.selectedSource)
+  this.destination.splice(this.index,1);
+
 }
 }

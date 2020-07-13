@@ -24,6 +24,7 @@ sendPassengerDetails(){
     this.passengerService.passengerLogin(this.passengerLoginForm.value).subscribe((data)=>{
       console.log(data);
       if(data.message!='login failed'){
+        sessionStorage.setItem("email",this.passengerLoginForm.value.email);
         this.router.navigate(['/passenger/home/'+ this.passengerLoginForm.value.email])
       }
       else{

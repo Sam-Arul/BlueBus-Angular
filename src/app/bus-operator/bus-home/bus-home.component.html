@@ -19,11 +19,9 @@
                 <h2>Source</h2>
             </div>
             <div class="col-lg-6">
-                <select class="form-control" formControlName='source' id="">
+                <select class="form-control" formControlName='source' [(ngModel)]="selectedSource" (change)="test()">
                     <option class="form-control" value="" disabled selected>Choose Source</option>
-                    <option class="form-control" value="chennai">Chennai</option>
-                    <option class="form-control" value="madurai">Madurai</option>
-                    <option class="form-control" value="salem">Salem</option>
+                    <option *ngFor="let s of source" class="form-control" [ngValue]="s">{{s}}</option>
                 </select>
             </div>
         </div>
@@ -32,11 +30,9 @@
                 <h2>Destination</h2>
             </div>
             <div class="col-lg-6">
-                <select class="form-control" formControlName='destination' id="">
+                <select class="form-control" formControlName='destination' [(ngModel)]="selectedDestination">
                     <option class="form-control" value="" disabled selected>Choose Destination</option>
-                    <option class="form-control" value="chennai">Chennai</option>
-                    <option class="form-control" value="madurai">Madurai</option>
-                    <option class="form-control" value="salem">Salem</option>
+                    <option *ngFor="let d of destination" class="form-control" [ngValue]="d">{{d}}</option>                  
                 </select>
             </div>
         </div>
@@ -45,7 +41,7 @@
                 <h2>Date</h2>
             </div>
             <div class="col-lg-6">
-                <input type="date" formControlName="date" class="form-control">
+                <input type="date" formControlName="date" class="form-control" id="datefield">
             </div>
         </div>
         <div class="row mt-2">

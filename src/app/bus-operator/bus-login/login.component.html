@@ -35,12 +35,14 @@
             </div>
             <div class="row">
                 <input type="email" formControlName='email' class="form-control">
+                <em *ngIf="busOperatorLoginForm.controls.email.invalid && busOperatorLoginForm.controls.email.touched">Email Invalid</em>
             </div>
             <div class="row">
                 <h3>Password</h3>
             </div>
             <div class="row">
                 <input type="password" formControlName='password' class="form-control">
+                <em *ngIf="busOperatorLoginForm.controls.password.invalid && busOperatorLoginForm.controls.password.touched">Password Required</em>
             </div>
             <div class="row mt-4">
                 <input type="submit" class="btn btn-primary form-control" value="Login" (click)="sendbusOperatorDetails()">
